@@ -6,9 +6,8 @@
   <meta charset="utf-8" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@400;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata:wght@300&family=Josefin+Sans:wght@200&display=swap" rel="stylesheet">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,32 +22,43 @@
       <div class="header__inner">
         <div class="header__text">
           <h1>
-            Astronomy picture of a day
+            <span>A</span>stronomy <span>P</span>icture <span>O</span>f a <span>D</span>ay
           </h1>
         </div>
-
-        <input id="searchTerm" type="text" placeholder="Enter search term" />
-        <button id="search">
-          Search
-        </button>
+        <form class="header__form" onsubmit="return false" id="search-form">
+          <label class="header__form_date-label">
+            <input class="header__form_input" max="" id="date-input" type="date" required>
+          </label>
+          <button class="header__form_button" type="submit">Search</button>
+        </form>
       </div>
     </div>
   </header>
-  <div class="api__content">
-    <div class="container">
-      <div class="text">
-        <div id="api__text">
 
-        </div>
+  <div class="api__container">
+    <div id = "content" class="api__content">
+      <div id="date" class="header__date"></div>
+      <div class="api__text">
+        <h1 id="api__title" class="api__content__title"></h1>
+        <p id="api__description" class="api__content__description"></p>
       </div>
 
-      <div class="image">
-        <div id="api__image">
-
-        </div>
+      <div class="api__media">
+        <iframe id="api__video" src=""></iframe>
+        <img id="api__image" src="" alt="">
       </div>
-
     </div>
+
+
+    <section id="content-error" class="content content__error">
+      Nothing found
+    </section>
+    <section id="content-connection-error" class="content content__error">
+      Connection error
+    </section>
+    <section id="content-loader" class="content content__loader">
+      <div class="content__spinner"></div>
+    </section>
   </div>
 </body>
 
