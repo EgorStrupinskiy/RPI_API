@@ -1,15 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const data = localStorage.getItem("data")
-    const date = localStorage.getItem("date")
-    if (data && date) {
-        updateData(JSON.parse(data))
-        setDate(date)
-    } else {
-        setDate(Date.now())
-        loadData(document.getElementById("date-input").value)
-    }
-})
-
 document.getElementById("search-form").addEventListener("submit", () => {
     document.getElementById("content-loader").style.display = "flex"
     document.getElementById("content").style.display = "none"
@@ -77,5 +65,15 @@ const setDate = (date) => {
 const offlineHandler = () => {
     document.getElementById("content-loader").style.display = "none"
     document.getElementById("content-connection-error").style.display = "flex"
+}
+
+const data = localStorage.getItem("data")
+const date = localStorage.getItem("date")
+if (data && date) {
+    updateData(JSON.parse(data))
+    setDate(date)
+} else {
+    setDate(Date.now())
+    loadData(document.getElementById("date-input").value)
 }
 
