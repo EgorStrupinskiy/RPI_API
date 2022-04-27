@@ -1,4 +1,5 @@
-document.getElementById("search-form").addEventListener("submit", () => {
+document.getElementById("search-form").addEventListener("submit", (e) => {
+    e.preventDefault()
     document.getElementById("content-loader").style.display = "flex"
     document.getElementById("content").style.display = "none"
     document.getElementById("content-error").style.display = "none"
